@@ -1,0 +1,22 @@
+[
+{"id": "1","island":"GranCanaria","price":"120€","imageUrl":["./images/id_1(1)","./images/id_1(2)"]},
+{"id": "2","island":"GranCanaria","price":"130€","imageUrl":["./images/id_2(1)","./images/id_2(2)"]},
+{"id": "3","island":"Fuerteventura","price":"90€","imageUrl":["./images/id_3(1)","./images/id_3(2)"]},
+{"id": "4","island":"Fuerteventura","price":"100€","imageUrl":["./images/id_4(1)","./images/id_4(2)"]},
+{"id": "5","island":"Lanzarote","price":"150€","imageUrl":["./images/id_5(1)","./images/id_5(2)"]},
+{"id": "6","island":"Lanzarote","price":"80€","imageUrl":["./images/id_6(1)","./images/id_6(2)"]}
+],
+[
+{"id": "1","rating":"Zona preciosa al lado del mar. Fui con mis amigos y nos lo pasamos genial, junto al mar y con una academia de sur muy cerca de la casa."},
+{"id": "2","rating":"Lugar precioso, tranquilo, fui con mi pareja y nos lo pasamos genial."},
+{"id": "3","rating":"No necesitas coche para ir a la playa, ya que la casa esta en la misma costa. Es la segunda vez que voy a este sitio, recomendadisimo."},
+{"id": "4","rating":"La zona es espectacular, hay una academia al lado donde puedes alquilar todo el material para hacer surf"},
+{"id": "5","rating":"Esta en la mejor playa de la isla, hay a todas horas una olas espectaculares"},
+{"id": "6","rating":"Estuvimos en la casa una semana con unos amigos y volveremos a repetir"}
+{"id": "7","rating":"Cerca de la zona se encuentra la ciudad, y hay mucha vida nocturna."},
+{"id": "8","rating":"Estuvimos surfeando todo el fin de semana, la casa esta en la misma playa, espectacular."},
+{"id": "9","rating":"Fuimos con 5 amigos, y estuvimos muy bien, la casa es amplia."},
+{"id": "10","rating":"Queriamos una casa cerca de la playa, ya que habian muchas que siempre tenias que coger el coche. Esta es genial, cuando vuelva a la isla repetire aqui"},
+{"id": "11","rating":"Estabamos mirando una casa donde pudiesen caber todos mis amigos, y esta nos vino perfecta"},
+{"id": "12","rating":"Estabamos muy cerca de la playa, espectacular"}
+]
