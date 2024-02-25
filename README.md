@@ -29,19 +29,21 @@ GET    | /booking/:id     | YES   | user | Get One Booking          |           
 POST   | /booking         | YES   | user | Create One Booking       |`start date`, `ending date`, `status`, `id_user`,|  { message: `string`, result: `object` }
        |                  |       |      |                          |                    `id_accomodation`            |
 PUT    | /booking/:id     | YES   | user | Update One Booking       |`start date`, `ending date`, `status`, `id_user`,| { message: `string`, result: `object` }
-       |                  |       |      |                          |                  `id_accomodation`              | 
-DELETE | /booking/:id     | YES   | user | Delete One Booking       |                                                 | { message: `string`, result: `object` }
+  -    |       -          |   -   |   -  |          -               |                  `id_accomodation`              |                 -
+DELETE | /booking/:id     | YES   | user | Delete One Booking       |                          -                      | { message: `string`, result: `object` }
 
 ### Accomodation Endpoints
 
 METHOD | ENDPOINT         | TOKEN | ROLE | DESCRIPTION              | POST PARAMS                                     | RETURNS
 -------|------------------|-------|------|--------------------------|-------------------------------------------------|--------------------
 GET    | /accomodation    | YES   | user | Get All Accomodations    |                                                 | { message: `string`, result: `array` }
-GET    | /booking/:id     | YES   | user | Get One Booking          |                                                 | { message: `string`, result: `object` }
-POST   | /booking         | YES   | user | Create One Booking       |`start date`, `ending date`, `status`, `id_user`,|  { message: `string`, result: `object` }
-       |                  |       |      |                          |                    `id_accomodation`            |
-PUT    | /booking/:id     | YES   | user | Update One Booking       |`start date`, `ending date`, `status`, `id_user`,| { message: `string`, result: `object` }
-       |                  |       |      |                          |                  `id_accomodation`              | 
-DELETE | /booking/:id     | YES   | user | Delete One Booking       |                                                 | { message: `string`, result: `object` }
+GET    | /accomodation/:id| YES   | user | Get One Accomodation     |                                                 | { message: `string`, result: `object` }
+POST   | /accomodation    | YES   |admin | Create One Accomodation  |   `name`, `address`, `description`, `price`,    |  { message: `string`, result: `object` }
+  -    |        -         |   -   |  -   |         -                |             `ratings`, `booking_id`             |                -
+PUT    |/accomodation/:id | YES   |admin | Update One Accomodation  |   `name`, `address`, `description`, `price`,    | { message: `string`, result: `object` }
+  -    |        -         |   -   |  -   |         -                |              `ratings`, `booking_id`            |                -
+PUT    |/accomod../add/:id| YES   | user | Add one acc to favorites |                     -                           | { message: `string`, result: `object` }
+PUT    |/acc.../remove/:id| YES   | user | Remove from my favorites |                     -                           | { message: `string`, result: `object` }  
+DELETE |/accomodation/:id | YES   |admin | Delete One Accomodation  |                                                 | { message: `string`, result: `object` }
 
 
