@@ -24,7 +24,7 @@ DELETE | /user/profile    | YES   | user | Update Own Profile       |    `name`,
 
 METHOD | ENDPOINT         | TOKEN | ROLE | DESCRIPTION              | POST PARAMS                                     | RETURNS
 -------|------------------|-------|------|--------------------------|-------------------------------------------------|--------------------
-GET    | /booking         | YES   | user | Get All own Users        |                                                 | { message: `string`, result: `array` }
+GET    | /booking         | YES   | user | Get All own Booking      |                                                 | { message: `string`, result: `array` }
 GET    | /booking/:id     | YES   | user | Get One Booking          |                                                 | { message: `string`, result: `object` }
 POST   | /booking         | YES   | user | Create One Booking       |`start date`, `ending date`, `status`, `id_user`,|  { message: `string`, result: `object` }
        |                  |       |      |                          |                    `id_accomodation`            |
