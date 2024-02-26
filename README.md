@@ -20,8 +20,7 @@ GET    | /user/:id        | YES   | admin| Get One User             |           
 GET    | /user/profile    | YES   | user | Get Own profile          |                                                 | { message: `string`, result: `object` }
 POST   | /user            | YES   | admin| Create One User          |    `name`, `email`, `password`, `role`          | { message: `string`, result: `object` }
 PUT    | /user/:id        | YES   | admin| Update One User          |    `name`, `email`, `password`, `role`          | { message: `string`, result: `object` }
-PUT    | /user/profile    | YES   | user | Update own Profile       |    `name`, `email`                              | { message: `string`, result: `object` }
-PUT    |/user/me/password | YES   | admin| Change Own Password      |    `password`                                   | { message: `string`, result: `object` }
+PUT    | /user/profile    | YES   | user | Update own Profile       |    `name`, `email`, `password`                  | { message: `string`, result: `object` }
 DELETE | /user/:id        | YES   | admin| Delete One User          |    `name`, `email`, `password`, `role           | { message: `string`, result: `object` }
 DELETE | /user/profile    | YES   | user | Update Own Profile       |    `name`, `email`, `password`, `role           | { message: `string`, result: `object` }
 
