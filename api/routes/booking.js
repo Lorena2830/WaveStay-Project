@@ -1,5 +1,11 @@
 const router = require('express').Router()
 
-router.use('/booking', require('./booking'))
+const { getAllBooking, getOneBooking, createBooking, updateBooking, deleteBooking } = require('../controllers/booking')
+
+router.get('/', getAllBooking)
+router.get('/:id', getOneBooking)
+router.post('/', createBooking)
+router.put('/:id', updateBooking)
+router.delete('/:id', deleteBooking)
 
 module.exports = router
