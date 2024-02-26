@@ -1,5 +1,5 @@
 const User = require('../api/models/user')
-//hay que traerse los modelos booking y accomodation
+const Accomodation = require('../api/models/accomodation')
 
 function addRelationsToModels() {
     try {
