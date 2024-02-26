@@ -1,4 +1,5 @@
-const User= require('../models/user')
+const User = require('../models/user')
+const Booking = require('../models/booking')
 const bcrypt = require('bcrypt')
 
 async function getAllUsers(req, res) { //vamos a optener todos los usuarios
@@ -16,7 +17,9 @@ async function getAllUsers(req, res) { //vamos a optener todos los usuarios
 
 async function getOneUser(req, res) { //vamos a optener un usuario
 	try {
-		const user = await User.findByPk(req.params.id)
+		const user = await User.findByPk(req.params.id, {
+			include: Booking
+		})
 		if (user) {
 			return res.status(200).json(user)
 		} else {
@@ -29,9 +32,8 @@ async function getOneUser(req, res) { //vamos a optener un usuario
 
 const getOwnProfile = async (req, res) => {
     try {
-        console.log(req.body)
       const user = await User.findByPk(res.locals.user.id, {
-        //include: Booking
+        include: Booking
       })
       res.status(200).json({
         message: "User profile correct",
