@@ -1,0 +1,4 @@
+id,username,email,password,role
+1,Layn,layn@gmail.com,$2b$10$LIVHNZu/TvzuTy/o7sAjqeLm0gnjX6lBXfp1IjoP25saHWeJ2hUO2,admin
+2,Jorge,jorge@gmail.com,$2b$10$bSarzCAHER8my2eYqqYpYun8UVmcFM8RxV.rkOh4gPz0RQSuICKvS,user
+3,Juani,juani@gmail.com,$2b$10$VCJhd5JpzUWyvIeAehhtbuXZYeObbH/S2hNhGIJ2bXt7/rgp.I4U2,user

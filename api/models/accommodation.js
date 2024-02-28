@@ -22,10 +22,19 @@ const Accommodation = sequelize.define(
       bedrooms: {
         type: DataTypes.INTEGER,
       },
-      description: {
+      description_large: {
+        type: DataTypes.TEXT,
+      },
+      description_short: {
         type: DataTypes.STRING,
       },
       imageUrl: {
+        type: DataTypes.STRING,
+      },
+      imageUrl1: {
+        type: DataTypes.STRING,
+      },
+      imageUrl2: {
         type: DataTypes.STRING,
       }
     },

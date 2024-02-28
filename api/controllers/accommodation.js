@@ -40,16 +40,20 @@ const getAccommodationById = async (req, res) => {
 
 const createAccommodation = async (req, res) => { // para owner y admin
     try {
-        const { name, address, description, price, rating, imageUrl } = req.body;
+        const { name, address, description_large, description_short, price, rating, imageUrl, imageUrl1, imageUrl2 } = req.body;
 
         const newAccommodation = await Accommodation.create({
             name,
             address,
             description,
+            description_large, 
+            description_short,
             price,
             rating,
             bedrooms,
             imageUrl,
+            imageUrl1,
+            imageUrl2
         });
 
         res.status(201).json({
@@ -66,7 +70,7 @@ const createAccommodation = async (req, res) => { // para owner y admin
 
 const updateAccommodation = async (req, res) => { // para owner y admin
     try {
-        const { name, address, description, price, rating, bedrooms, imageUrl } = req.body;
+        const { name, address, description_large, description_short, price, rating, imageUrl, imageUrl1, imageUrl2 } = req.body;
 
         const accommodation = await Accommodation.findByPk(req.params.id);
         if (!accommodation) {
@@ -79,10 +83,14 @@ const updateAccommodation = async (req, res) => { // para owner y admin
             name,
             address,
             description,
+            description_large, 
+            description_short,
             price,
             rating,
             bedrooms,
             imageUrl,
+            imageUrl1,
+            imageUrl2
         });
 
         res.status(200).json({
