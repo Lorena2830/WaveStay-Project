@@ -10,7 +10,6 @@ const Accommodation = sequelize.define(
       },
       address: {
         type: DataTypes.STRING,
-        unique: true,
         allowNull: false,
       },
       price: {
@@ -19,6 +18,9 @@ const Accommodation = sequelize.define(
       },
       rating: {
         type: DataTypes.FLOAT,
+      },
+      bedrooms: {
+        type: DataTypes.INTEGER,
       },
       description: {
         type: DataTypes.STRING,
