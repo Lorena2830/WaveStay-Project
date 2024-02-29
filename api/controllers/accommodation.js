@@ -139,11 +139,11 @@ const getAllAcommodationsFavorites = async (req, res) => {
     try {
         const userId = req.params.userId;
         const accommodations = await Accommodation.findAll({
-            include: {
+            include: [{
                 model: User,
                 where: { id: userId },
                 through: { where: { isFavorite: true } }
-            }
+            }]
         });
         res.status(200).json({
             message: "Get All accommodations favorites",
