@@ -13,7 +13,7 @@ const {
 
 accommodationRouter.get('/', getAllAcommodations);
 accommodationRouter.get('/:id', getAccommodationById);
-accommodationRouter.get('/fav/:id', getAllAcommodationsFavorites);
+accommodationRouter.get('/fav/:id',checkAuth, getAllAcommodationsFavorites);
 accommodationRouter.post('/', createAccommodation);
 accommodationRouter.put('/:id', updateAccommodation);
 accommodationRouter.put('/add/:id', checkAuth, addOneAccToFavorite);
