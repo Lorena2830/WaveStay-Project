@@ -138,6 +138,7 @@ const addOneAccToFavorite = async (req, res) => { //función donde el usuario pu
 const getAllAcommodationsFavorites = async (req, res) => {  
     try {
         const userId = req.params.userId;
+        console.log(userId)
         const accommodations = await Accommodation.findAll({
             include: [{
                 model: User,
