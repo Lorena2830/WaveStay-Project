@@ -12,14 +12,9 @@ async function checkAndSyncPostgreSQL() {
     await syncModels()
   }
 
-  const corsOptions = {
-    origin: 'http://127.0.0.1:5173', // Reemplaza con el dominio de tu aplicación cliente
-    optionsSuccessStatus: 200, // Algunos navegadores pueden devolver un código de estado 204
-  };
-
   function initializeAndListenWithExpress() {
     const app = express()
-      .use(cors(corsOptions))
+      .use(cors())
       .use(morgan('dev'))
       .use(express.json())
       .use('/api', require('./api/routes'))
