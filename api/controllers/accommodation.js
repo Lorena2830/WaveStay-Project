@@ -135,6 +135,28 @@ const addOneAccToFavorite = async (req, res) => { //función donde el usuario pu
     }
 };
 
+const getAllAcommodationsFavorites = async (req, res) => {  
+    try {
+        const userId = req.params.userId;
+        const accommodations = await Accommodation.findAll({
+            include: {
+                model: User,
+                where: { id: userId },
+                through: { where: { isFavorite: true } }
+            }
+        });
+        res.status(200).json({
+            message: "Get All accommodations favorites",
+            result: accommodations,
+        });
+    } catch (error) {
+        res.status(500).json({
+            message: "Error getting accommodations favorites",
+            result: error,
+        });
+    }
+};
+
 const removeFromFavorites = async (req, res) => { //función donde el usuario puede eliminar un alojamiento de favoritos
     try {
         const { userId, accommodationId } = req.body;
@@ -186,6 +208,7 @@ module.exports = {
     createAccommodation,
     updateAccommodation,
     addOneAccToFavorite,
+    getAllAcommodationsFavorites,
     removeFromFavorites,
     deleteAccommodation,
 }

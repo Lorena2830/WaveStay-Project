@@ -5,13 +5,15 @@ const {
   getAccommodationById, 
   createAccommodation, 
   updateAccommodation, 
-  addOneAccToFavorite, 
+  addOneAccToFavorite,
+  getAllAcommodationsFavorites, 
   removeFromFavorites,
   deleteAccommodation 
 } = require("../controllers/accommodation")
 
 accommodationRouter.get('/', getAllAcommodations);
 accommodationRouter.get('/:id', getAccommodationById);
+accommodationRouter.get('/fav/:id', getAllAcommodationsFavorites);
 accommodationRouter.post('/', createAccommodation);
 accommodationRouter.put('/:id', updateAccommodation);
 accommodationRouter.put('/add/:id', addOneAccToFavorite);
