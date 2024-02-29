@@ -107,14 +107,13 @@ const updateAccommodation = async (req, res) => { // para owner y admin
 
 const addOneAccToFavorite = async (req, res) => { //función donde el usuario puede añadir un alojamiento a favoritos
     try {
-        const { userId, accommodationId } = req.body;
-        const user = await User.findByPk(userId)
+        const user = await User.findByPk(res.locals.user.id)
         if (!user) {
             return res.status(404).json({
               message: "User not found",
             });
           }
-        const accommodation = await Accommodation.findByPk(accommodationId)
+        const accommodation = await Accommodation.findByPk(req.params.id)
         if (!accommodation) {
             return res.status(404).json({
               message: "Accommodation not found",
