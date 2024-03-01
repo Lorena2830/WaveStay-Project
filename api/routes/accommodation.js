@@ -12,7 +12,7 @@ const {
 } = require("../controllers/accommodation")
 
 accommodationRouter.get('/', getAllAcommodations);
-accommodationRouter.get('/fav/:id',checkAuth, getAllAcommodationsFavorites);
+accommodationRouter.get('/fav',checkAuth, getAllAcommodationsFavorites);
 accommodationRouter.get('/:id', getAccommodationById);
 accommodationRouter.post('/', createAccommodation);
 accommodationRouter.put('/add/:id', checkAuth, addOneAccToFavorite);
