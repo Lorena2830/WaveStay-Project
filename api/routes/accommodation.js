@@ -12,12 +12,12 @@ const {
 } = require("../controllers/accommodation")
 
 accommodationRouter.get('/', getAllAcommodations);
-accommodationRouter.get('/:id', getAccommodationById);
 accommodationRouter.get('/fav/:id',checkAuth, getAllAcommodationsFavorites);
+accommodationRouter.get('/:id', getAccommodationById);
 accommodationRouter.post('/', createAccommodation);
-accommodationRouter.put('/:id', updateAccommodation);
 accommodationRouter.put('/add/:id', checkAuth, addOneAccToFavorite);
 accommodationRouter.put('/remove/:id', removeFromFavorites);
+accommodationRouter.put('/:id', updateAccommodation);
 accommodationRouter.delete('/:id',deleteAccommodation);
 
 module.exports = accommodationRouter;
