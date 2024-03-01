@@ -4,7 +4,7 @@ const { getAllUsers, getOneUser, getOwnProfile, createUser, updateUser, deleteUs
 const { checkAuth, checkAdmin } = require('../utils/check')
 
 router.get('/', /* checkAuth, checkAdmin, */ getAllUsers)
-router.get('/profile', /* checkAuth, */ getOwnProfile)
+router.get('/profile',  checkAuth,  getOwnProfile)
 router.get('/:id', /* checkAuth, checkAdmin, */ getOneUser)
 router.post('/', /* checkAuth, checkAdmin,  */createUser)
 router.put('/:id', /* checkAuth, checkAdmin, */ updateUser)
