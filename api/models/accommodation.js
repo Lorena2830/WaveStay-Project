@@ -1,4 +1,4 @@
-const { DataTypes } = require('sequelize')
+const { DataTypes, ARRAY } = require('sequelize')
 const { sequelize } = require('../../database/dbindex')
 
 const Accommodation = sequelize.define(

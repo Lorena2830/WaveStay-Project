@@ -1,4 +1,5 @@
 const Booking = require('../models/booking')
+const Accommodation = require('../models/accommodation')
 
 async function getAllBooking(req, res) { //vamos a optener todas las reservas
 	try {
@@ -16,6 +17,21 @@ async function getAllBooking(req, res) { //vamos a optener todas las reservas
 async function getOneBooking(req, res) { //vamos a optener una reserva
 	try {
 		const booking = await Booking.findByPk(req.params.id)
+		if (booking) {
+			return res.status(200).json(booking)
+		} else {
+			return res.status(404).send('Booking not found')
+		}
+	} catch (error) {
+		res.status(500).send(error.message)
+	}
+}
+
+async function getBookingByAccommodation(req, res) { //vamos a optener una reserva por habitación 
+	try {
+		const booking = await Booking.findByPk(req.params.id, {
+            include: Accommodation
+        })
 		if (booking) {
 			return res.status(200).json(booking)
 		} else {
@@ -88,5 +104,6 @@ module.exports = {
 	getOneBooking,
     createBooking,
 	updateBooking,
+    getBookingByAccommodation,
 	deleteBooking
 }

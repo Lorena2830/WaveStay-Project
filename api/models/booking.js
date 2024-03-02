@@ -16,6 +16,20 @@ const Booking = sequelize.define(
       type: DataTypes.ENUM('Pendiente', 'Cancelada', 'Aceptada'),
       defaultValue: 'Pendiente'
     },
+    accommodationId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'accommodation',
+        key: 'id'
+      }
+    },
+    userId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id'
+      }
+    }
   },
   {
     timestamps: false //no queremos fecha de creacion ni modificacion
