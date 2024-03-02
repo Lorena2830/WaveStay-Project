@@ -47,7 +47,8 @@ async function signup(req, res) {
           message: "Login succesful",
           result: {
             token,
-            role: user.role
+            role: user.role,
+            id: user.id
           }
         });
       } else {
