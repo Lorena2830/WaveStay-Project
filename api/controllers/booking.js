@@ -29,7 +29,7 @@ async function getOneBooking(req, res) { //vamos a optener una reserva
 
 async function getBookingByAccommodation(req, res) { //vamos a optener una reserva por habitación 
 	try {
-		const booking = await Booking.findByPk(req.params.id, {
+		const booking = await Booking.findAll(req.params.id, {
             include: Accommodation
         })
 		if (booking) {
