@@ -25,7 +25,6 @@ const getAccommodationById = async (req, res) => {
         const accommodation = await Accommodation.findByPk(req.params.id, {
             include: Booking
         })
-
         res.status(200).json({
             message: "Get accommodation succesful",
             result: accommodation,
@@ -106,8 +105,7 @@ const updateAccommodation = async (req, res) => { // para owner y admin
 };
 
 const addOneAccToFavorite = async (req, res) => { //función donde el usuario puede añadir un alojamiento a favoritos
-    
-   
+
     try {
         const user = await User.findByPk(res.locals.user.id)
         if (!user) {

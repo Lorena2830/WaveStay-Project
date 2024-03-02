@@ -28,9 +28,13 @@ async function getOneBooking(req, res) { //vamos a optener una reserva
 
 const createBooking = async (req, res) => {
     try {
-      const booking = await Booking.create(req.body)
-  
-      res.status(200).json({
+      const { startdate, endingdate, status } = req.body;
+      const booking = await Booking.create({
+        startdate,
+        endingdate,
+        status,
+    });
+      res.status(200).json({ 
         message: "Booking created",
         result: booking
       });
