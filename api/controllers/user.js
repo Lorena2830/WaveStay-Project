@@ -34,8 +34,7 @@ async function getOneUser(req, res) { //vamos a optener un usuario
 const getOwnProfile = async (req, res) => {
     try {
       const user = await User.findByPk(res.locals.user.id, {
-        include: Booking,
-		include: Accommodation
+        include: [Booking, Accommodation]
       })
       res.status(200).json({
         message: "User profile correct",
