@@ -53,7 +53,6 @@ async function getBookingsByUser(req, res) { //vamos a optener las reservas por 
 		const booking = await Booking.findAll({
             include: [{
                 model: User,
-                model: Accommodation,
                 where: { id: userId }
             }]
         });
