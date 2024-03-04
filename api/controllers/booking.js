@@ -125,10 +125,8 @@ const createBooking = async (req, res) => {
 
 const removeBookingFromUser = async (req, res) => { //función donde el usuario puede eliminar una reserva
     try {
-        const id  = req.body;
+        const {id}  = req.params;
         const userId = res.locals.user.id
-        console.log(id, 'id')
-        console.log(userId, 'userid')
         const user = await User.findByPk(userId);
         if (!user) {
             return res.status(404).send('User not found');
