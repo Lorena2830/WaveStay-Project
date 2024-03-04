@@ -167,7 +167,7 @@ const removeFromFavorites = async (req, res) => { //función donde el usuario pu
         }
         await accommodation.removeUser(user);
     
-        return res.status(200).json({ message: 'User removed to  successfully', accommodation : accommodation, user: user});
+        return res.status(200).json({ message: 'Accommodation removed to  successfully', accommodation : accommodation, user: user});
     } catch (error) {
         res.status(500).json({
             message: "Error removing from favorites",

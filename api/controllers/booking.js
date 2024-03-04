@@ -123,6 +123,30 @@ const createBooking = async (req, res) => {
     }
 }
 
+const removeBookingFromUser = async (req, res) => { //función donde el usuario puede eliminar un alojamiento de favoritos
+    try {
+        const { bookingId } = req.body;
+        const {userId} = res.locals.user.id
+        const user = await User.findByPk(userId);
+        if (!user) {
+            return res.status(404).send('User not found');
+        }
+        const booking = await Accommodation.findByPk(bookingId);
+        if (!booking) {
+            return res.status(404).send('Booking not found');
+        }
+        await booking.removeUser(user);
+    
+        return res.status(200).json({ message: 'Booking removed to  successfully', booking : booking, user: user});
+    } catch (error) {
+        res.status(500).json({
+            message: "Error removing from bookings",
+            result: error.message,
+        });
+    }
+};
+
+
 module.exports = {
 	getAllBooking,
 	getOneBooking,
@@ -130,5 +154,6 @@ module.exports = {
     createBooking,
 	updateBooking,
     getBookingByAccommodation,
-	deleteBooking
+	deleteBooking,
+    removeBookingFromUser
 }
