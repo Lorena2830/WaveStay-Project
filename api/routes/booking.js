@@ -10,6 +10,6 @@ router.get('/:id', getOneBooking)
 router.post('/', createBooking)
 router.put('/:id', updateBooking)
 router.delete('/remove/:id', checkAuth, removeBookingFromUser)
-router.delete('/:id', deleteBooking)
+router.delete('/:id', checkAuth, deleteBooking)
 
 module.exports = router
